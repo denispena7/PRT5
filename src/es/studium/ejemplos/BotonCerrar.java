@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 
 public class BotonCerrar implements ActionListener
 {
-
 	Frame ventana = new Frame("Ventana que se cierra");
 	Button btnCerrar = new Button("Cerrar Ventana");
 	
