@@ -82,6 +82,98 @@ public class Ejercicio5 implements WindowListener, ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		int presupuesto = 0;
+		int diesel = 8000;
+		int gasolina = 7000;
+		int hibrido = 9000;
+		int electrico = 8500;
+		int tresp = 2000;
+		int cuatrop = 3000;
+		int cincop = 2500;
+
+		// Diesel + 3 Puertas + PM,	  Diesel + 3 puertas + PNM
+		if(chkDiesel.getState() && chk3.getState())
+		{
+			presupuesto = presupuesto + diesel + tresp;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Diesel + 4 Puertas + PM,	  Diesel + 4 puertas + PNM
+		if(chkDiesel.getState() && chk4.getState())
+		{
+			presupuesto = presupuesto + diesel + cuatrop;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Diesel + 5 puertas + PM, 	Diesel + 5 puertas + PNM
+		if(chkDiesel.getState() && chk5.getState())
+		{
+			presupuesto = presupuesto + diesel + cincop;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Gasolina + 3 puertas + PM,	Gasolina + 3 puertas + PNM
+		if(chkGasolina.getState() && chk3.getState())
+		{
+			presupuesto = presupuesto + gasolina + tresp;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Gasolina + 4 puertas + PM,	Gasolina + 4 puertas + PNM
+		if(chkGasolina.getState() && chk4.getState())
+		{
+			presupuesto = presupuesto + gasolina + cuatrop;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Gasolina + 5 puertas + PM,	Gasolina + 5 puertas + PNM
+		if(chkGasolina.getState() && chk5.getState())
+		{
+			presupuesto = presupuesto + gasolina + cincop;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Hibrido + 3 puertas + PM,	Hibrido + 3 puertas + PNM
+		if(chkHibrido.getState() && chk3.getState())
+		{
+			presupuesto = presupuesto + hibrido + tresp;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Hibrido + 4 puertas + PM,	Hibrido + 4 puertas + PNM
+		if(chkHibrido.getState() && chk4.getState())
+		{
+			presupuesto = presupuesto + hibrido + cuatrop;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Hibrido + 5 puertas + PM,	Hibrido + 5 puertas + PNM
+		if(chkHibrido.getState() && chk5.getState())
+		{
+			presupuesto = presupuesto + hibrido + cincop;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Electrico + 3 puertas + PM,	Electrico + 3 puertas + PNM
+		if(chkElectrico.getState() && chk3.getState())
+		{
+			presupuesto = presupuesto + electrico + tresp;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Electrico + 4 puertas + PM,	Electrico + 4 puertas + PNM
+		if(chkElectrico.getState() && chk4.getState())
+		{
+			presupuesto = presupuesto + electrico + cuatrop;
+		}
+		txt.setText(presupuesto + " €");
+
+		// Electrico + 5 puertas + PM,	Electrico + 5 puertas + PNM
+		if(chkElectrico.getState() && chk5.getState())
+		{
+			presupuesto = presupuesto + electrico +cincop;
+		}
+		txt.setText(presupuesto + " €");
+
 		if(chks.getState())
 		{
 			presupuesto = presupuesto + 1500;
@@ -90,7 +182,7 @@ public class Ejercicio5 implements WindowListener, ActionListener
 		{
 			presupuesto = presupuesto + 0;
 		}
-		txt.setText(presupuesto + "");
+		txt.setText(presupuesto + " €");
 	}
 
 	@Override
