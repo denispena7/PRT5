@@ -29,9 +29,9 @@ public class Ejercicio5 implements WindowListener, ActionListener
 	
 	Label lblP = new Label("Número de puertas:");
 	CheckboxGroup chgPuertas = new CheckboxGroup();
-	Checkbox chk3 = new Checkbox("3 puertas", false, chgPuertas);
-	Checkbox chk4 = new Checkbox("4 puertas", false, chgPuertas);
-	Checkbox chk5 = new Checkbox("5 puertas", false, chgPuertas);
+	Checkbox chk3Puertas = new Checkbox("3 puertas", false, chgPuertas);
+	Checkbox chk4Puertas = new Checkbox("4 puertas", false, chgPuertas);
+	Checkbox chk5Puertas = new Checkbox("5 puertas", false, chgPuertas);
 	
 	Label lblPM = new Label("Pintura Metalizada:");
 	CheckboxGroup chgSiNo = new CheckboxGroup();
@@ -54,9 +54,9 @@ public class Ejercicio5 implements WindowListener, ActionListener
 		pnlDatos.add(chkElectrico);
 		
 		pnlDatos.add(lblP);
-		pnlDatos.add(chk3);
-		pnlDatos.add(chk4);
-		pnlDatos.add(chk5);
+		pnlDatos.add(chk3Puertas);
+		pnlDatos.add(chk4Puertas);
+		pnlDatos.add(chk5Puertas);
 		pnlDatos.add(lblPM);
 		pnlDatos.add(chks);
 		pnlDatos.add(chkn);
@@ -82,6 +82,7 @@ public class Ejercicio5 implements WindowListener, ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		int presupuesto = 0;
+		/*
 		int diesel = 8000;
 		int gasolina = 7000;
 		int hibrido = 9000;
@@ -91,89 +92,124 @@ public class Ejercicio5 implements WindowListener, ActionListener
 		int cincop = 2500;
 
 		// Diesel + 3 Puertas + PM,	  Diesel + 3 puertas + PNM
-		if(chkDiesel.getState() && chk3.getState())
+		if(chkDiesel.getState() && chk3Puertas.getState())
 		{
 			presupuesto = presupuesto + diesel + tresp;
 		}
 		txt.setText(presupuesto + " €");
+		
 
 		// Diesel + 4 Puertas + PM,	  Diesel + 4 puertas + PNM
-		if(chkDiesel.getState() && chk4.getState())
+		if(chkDiesel.getState() && chk4Puertas.getState())
 		{
 			presupuesto = presupuesto + diesel + cuatrop;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Diesel + 5 puertas + PM, 	Diesel + 5 puertas + PNM
-		if(chkDiesel.getState() && chk5.getState())
+		if(chkDiesel.getState() && chk5Puertas.getState())
 		{
 			presupuesto = presupuesto + diesel + cincop;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Gasolina + 3 puertas + PM,	Gasolina + 3 puertas + PNM
-		if(chkGasolina.getState() && chk3.getState())
+		if(chkGasolina.getState() && chk3Puertas.getState())
 		{
 			presupuesto = presupuesto + gasolina + tresp;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Gasolina + 4 puertas + PM,	Gasolina + 4 puertas + PNM
-		if(chkGasolina.getState() && chk4.getState())
+		if(chkGasolina.getState() && chk4Puertas.getState())
 		{
 			presupuesto = presupuesto + gasolina + cuatrop;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Gasolina + 5 puertas + PM,	Gasolina + 5 puertas + PNM
-		if(chkGasolina.getState() && chk5.getState())
+		if(chkGasolina.getState() && chk5Puertas.getState())
 		{
 			presupuesto = presupuesto + gasolina + cincop;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Hibrido + 3 puertas + PM,	Hibrido + 3 puertas + PNM
-		if(chkHibrido.getState() && chk3.getState())
+		if(chkHibrido.getState() && chk3Puertas.getState())
 		{
 			presupuesto = presupuesto + hibrido + tresp;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Hibrido + 4 puertas + PM,	Hibrido + 4 puertas + PNM
-		if(chkHibrido.getState() && chk4.getState())
+		if(chkHibrido.getState() && chk4Puertas.getState())
 		{
 			presupuesto = presupuesto + hibrido + cuatrop;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Hibrido + 5 puertas + PM,	Hibrido + 5 puertas + PNM
-		if(chkHibrido.getState() && chk5.getState())
+		if(chkHibrido.getState() && chk5Puertas.getState())
 		{
 			presupuesto = presupuesto + hibrido + cincop;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Electrico + 3 puertas + PM,	Electrico + 3 puertas + PNM
-		if(chkElectrico.getState() && chk3.getState())
+		if(chkElectrico.getState() && chk3Puertas.getState())
 		{
 			presupuesto = presupuesto + electrico + tresp;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Electrico + 4 puertas + PM,	Electrico + 4 puertas + PNM
-		if(chkElectrico.getState() && chk4.getState())
+		if(chkElectrico.getState() && chk4Puertas.getState())
 		{
 			presupuesto = presupuesto + electrico + cuatrop;
 		}
 		txt.setText(presupuesto + " €");
 
 		// Electrico + 5 puertas + PM,	Electrico + 5 puertas + PNM
-		if(chkElectrico.getState() && chk5.getState())
+		if(chkElectrico.getState() && chk5Puertas.getState())
 		{
 			presupuesto = presupuesto + electrico +cincop;
 		}
 		txt.setText(presupuesto + " €");
+		*/
+		
+		// Gasolina
+		if(chkDiesel.getState())
+		{
+			presupuesto += 8000;
+		}
+		else if(chkGasolina.getState())
+		{
+			presupuesto += 7000;
+		}
+		else if(chkHibrido.getState())
+		{
+			presupuesto += 9000;
+		}
+		else if(chkElectrico.getState())
+		{
+			presupuesto += 8500;
+		}
+		
+		// Puertas
+		if(chk3Puertas.getState())
+		{
+			presupuesto += 2000;
+		}
+		else if(chk4Puertas.getState())
+		{
+			presupuesto += 3000;
+		}
+		else if(chk5Puertas.getState())
+		{
+			presupuesto += 2500;
+		}
 
+		// Pintura metalizada
 		if(chks.getState())
 		{
 			presupuesto = presupuesto + 1500;
