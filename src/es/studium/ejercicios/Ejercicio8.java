@@ -41,7 +41,17 @@ public class Ejercicio8 implements WindowListener, ActionListener
 		
 		ventana.addWindowListener(this);
 		digMensaje.addWindowListener(this);
+		
 		mniArticuloNuevo.addActionListener(this);
+		mniArticuloEliminar.addActionListener(this);
+		mniArticuloConsultar.addActionListener(this);
+		
+		mniNuevoCliente.addActionListener(this);
+		mniEliminarCliente.addActionListener(this);
+		mniConsultarCliente.addActionListener(this);
+		
+		mniNuevaFactura.addActionListener(this);
+		mniConsultarFactura.addActionListener(this);
 		
 		ventana.setMenuBar(barraMenu);
 		
@@ -79,10 +89,43 @@ public class Ejercicio8 implements WindowListener, ActionListener
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e)
+	public void actionPerformed(ActionEvent evento)
 	{
 		// Averiguar qué opción se ha elegido
 		// getSource()
+		if(evento.getSource().equals(mniArticuloNuevo))
+		{
+			lblMensaje.setText("Nuevo Artículo");
+		}
+		else if(evento.getSource().equals(mniArticuloEliminar))
+		{
+			lblMensaje.setText("Eliminar Artículo");
+		}
+		else if(evento.getSource().equals(mniArticuloConsultar))
+		{
+			lblMensaje.setText("Consultar Artículo");
+		}
+		else if(evento.getSource().equals(mniNuevoCliente))
+		{
+			lblMensaje.setText("Nuevo Cliente");
+		}
+		else if(evento.getSource().equals(mniEliminarCliente))
+		{
+			lblMensaje.setText("Eliminar Cliente");
+		}
+		else if(evento.getSource().equals(mniConsultarCliente))
+		{
+			lblMensaje.setText("Consultar Cliente");
+		}
+		else if(evento.getSource().equals(mniNuevaFactura))
+		{
+			lblMensaje.setText("Nueva Factura");
+		}
+		else if(evento.getSource().equals(mniConsultarFactura))
+		{
+			lblMensaje.setText("Consultar Factura");
+		}
+		
 		digMensaje.setVisible(true);
 	}
 

@@ -95,7 +95,7 @@ public class Ejercicio1 implements WindowListener, ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		// Coger número escrito
+		// Coger número escrito en el campo de texto
 		int numero = Integer.parseInt(txt.getText());
 		
 		// Comprobar si es par o impar

@@ -28,7 +28,7 @@ public class Ejercicio2 implements WindowListener, ActionListener
 		/*
 		 *  Añadir las interfaces
 		 *  Para el boton de la 'x' usamos la ventana y la interfaz WindowListener
-		 *  Para el boton interno usamos el boton y la interfaz ActionListener
+		 *  Para el boton interno implementamos la interfaz ActionListener
 		 *  Entre paréntesis 'this'
 		 */
 		ventana.addWindowListener(this);
