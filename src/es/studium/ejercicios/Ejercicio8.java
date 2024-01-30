@@ -1,5 +1,6 @@
 package es.studium.ejercicios;
 
+import java.awt.Color;
 import java.awt.Dialog;
 import java.awt.FlowLayout;
 import java.awt.Frame;
@@ -55,6 +56,9 @@ public class Ejercicio8 implements WindowListener, ActionListener
 		
 		ventana.setMenuBar(barraMenu);
 		
+		digMensaje.setBackground(Color.gray);
+		lblMensaje.setForeground(Color.white);
+		
 		barraMenu.add(mnuArticulos);
 		mnuArticulos.add(mniArticuloNuevo);
 		mnuArticulos.add(mniArticuloEliminar);
@@ -93,6 +97,7 @@ public class Ejercicio8 implements WindowListener, ActionListener
 	{
 		// Averiguar qué opción se ha elegido
 		// getSource()
+		/*
 		if(evento.getSource().equals(mniArticuloNuevo))
 		{
 			lblMensaje.setText("Nuevo Artículo");
@@ -125,7 +130,9 @@ public class Ejercicio8 implements WindowListener, ActionListener
 		{
 			lblMensaje.setText("Consultar Factura");
 		}
+		*/
 		
+		lblMensaje.setText(evento.getActionCommand());
 		digMensaje.setVisible(true);
 	}
 
