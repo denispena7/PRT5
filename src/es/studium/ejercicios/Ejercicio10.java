@@ -14,6 +14,7 @@ import java.awt.event.WindowListener;
 public class Ejercicio10 implements WindowListener, ActionListener
 {
 	Frame ventana = new Frame("Tres en raya");
+
 	Button btn1 = new Button(""); 
 	Button btn2 = new Button(""); 
 	Button btn3 = new Button(""); 
@@ -23,60 +24,60 @@ public class Ejercicio10 implements WindowListener, ActionListener
 	Button btn7 = new Button(""); 
 	Button btn8 = new Button("");
 	Button btn9 = new Button(""); 
-	
+
 	Dialog digMensaje = new Dialog(ventana, "Fin", true);
 	Label lblMensaje = new Label("                ");
-	
+
 	int turno = 0; // 0 --> O , 1 --> X
 	int contador;
 	boolean fin = false;
-	
+
 	public Ejercicio10()
 	{
 		ventana.setLayout(new GridLayout(3,3));
 		ventana.addWindowListener(this);
-		
+
 		digMensaje.setLayout(new FlowLayout());
 		digMensaje.addWindowListener(this);
-		
+
 		btn1.addActionListener(this);
 		ventana.add(btn1);
-		
+
 		btn2.addActionListener(this);
 		ventana.add(btn2);
-		
+
 		btn3.addActionListener(this);
 		ventana.add(btn3);
-		
+
 		btn4.addActionListener(this);
 		ventana.add(btn4);
-		
+
 		btn5.addActionListener(this);
 		ventana.add(btn5);
-		
+
 		btn6.addActionListener(this);
 		ventana.add(btn6);
-		
+
 		btn7.addActionListener(this);
 		ventana.add(btn7);
-		
+
 		btn8.addActionListener(this);
 		ventana.add(btn8);
-		
+
 		btn9.addActionListener(this);
 		ventana.add(btn9);
-		
+
 		digMensaje.add(lblMensaje);
-		
-		digMensaje.setSize(200, 200);
+
+		digMensaje.setSize(150, 100);
 		digMensaje.setLocationRelativeTo(null);
-		
+
 		ventana.setSize(400, 400);
 		ventana.setLocationRelativeTo(null);
 		ventana.setResizable(false);
 		ventana.setVisible(true);
 	}
-	
+
 	public static void main(String[] args)
 	{
 		new Ejercicio10();
@@ -86,49 +87,56 @@ public class Ejercicio10 implements WindowListener, ActionListener
 	public void windowOpened(WindowEvent e)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void windowClosing(WindowEvent e)
 	{
-		System.exit(0);
-		
+		// Aclarar este funcionamiento 
+		if(digMensaje.isActive())
+		{
+			digMensaje.setVisible(false);
+		}
+		else
+		{
+			System.exit(0);
+		}
 	}
 
 	@Override
 	public void windowClosed(WindowEvent e)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void windowIconified(WindowEvent e)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void windowDeiconified(WindowEvent e)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void windowActivated(WindowEvent e)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void windowDeactivated(WindowEvent e)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -260,33 +268,75 @@ public class Ejercicio10 implements WindowListener, ActionListener
 			}
 			btn9.removeActionListener(this);
 		}
-		
+
+		// ¿Cómo hace la variable contador para aumentar?
 		contador ++;
 		comprobar();
 		if(contador == 9)
 		{
 			lblMensaje.setText("Empate");
 			digMensaje.add(lblMensaje);
-			System.out.println("Empate");
+			digMensaje.setVisible(true);
 		}
 	}
 
 	private void comprobar()
 	{
-		if((btn1.getLabel() == btn2.getLabel()) && (btn2.getLabel() == btn3.getLabel())
-			&& (btn3.getLabel() == btn1.getLabel()))
+		if((btn1.getLabel() == btn2.getLabel()) && (btn2.getLabel() == btn3.getLabel()) && 
+			(!btn1.getLabel().equals("")))
 		{
-			lblMensaje.setText("Gana "+ btn1.getLabel());
+			lblMensaje.setText("Ha ganado " + btn1.getLabel());
+			// ¿Que papel hace la variable fin?
 			fin = true;
+			digMensaje.setVisible(true);
 		}
-		else if()
+		else if((btn4.getLabel() == btn5.getLabel()) && (btn5.getLabel() == btn6.getLabel()) && 
+				(!btn4.getLabel().equals("")))
 		{
-			
+			lblMensaje.setText("Ha ganado " + btn4.getLabel());
+			fin = true;
+			digMensaje.setVisible(true);
 		}
-		
-		if(fin == true)
+		else if((btn7.getLabel() == btn8.getLabel()) && (btn8.getLabel() == btn9.getLabel()) &&
+				(!btn7.getLabel().equals("")))
 		{
-			digMensaje.add(lblMensaje);
+			lblMensaje.setText("Ha ganado " + btn7.getLabel());
+			fin = true;
+			digMensaje.setVisible(true);
+		}
+		else if((btn1.getLabel() == btn4.getLabel()) && (btn4.getLabel() == btn7.getLabel()) &&
+				(!btn1.getLabel().equals("")))
+		{
+			lblMensaje.setText("Ha ganado " + btn1.getLabel());
+			fin = true;
+			digMensaje.setVisible(true);
+		}
+		else if((btn2.getLabel() == btn5.getLabel()) && (btn5.getLabel() == btn8.getLabel()) &&
+				(!btn2.getLabel().equals(""))) 
+		{
+			lblMensaje.setText("Ha ganado " + btn2.getLabel());
+			fin = true;
+			digMensaje.setVisible(true);
+		}
+		else if((btn3.getLabel() == btn6.getLabel()) && (btn6.getLabel() == btn9.getLabel()) &&
+				(!btn3.getLabel().equals("")))
+		{
+			lblMensaje.setText("Ha ganado " + btn3.getLabel());
+			fin = true;
+			digMensaje.setVisible(true);
+		}
+		else if((btn1.getLabel() == btn5.getLabel()) && (btn5.getLabel() == btn9.getLabel()) &&
+				(!btn1.getLabel().equals("")))
+		{
+			lblMensaje.setText("Ha ganado " + btn1.getLabel());
+			fin = true;
+			digMensaje.setVisible(true);
+		}
+		else if((btn3.getLabel() == btn5.getLabel()) && (btn5.getLabel() == btn7.getLabel()) &&
+				(!btn3.getLabel().equals("")))
+		{
+			lblMensaje.setText("Ha ganado " + btn3.getLabel());
+			fin = true;
 			digMensaje.setVisible(true);
 		}
 	}
