@@ -97,11 +97,52 @@ public class Ejercicio10 implements WindowListener, ActionListener
 		if(digMensaje.isActive())
 		{
 			digMensaje.setVisible(false);
+			reiniciar();
 		}
 		else
 		{
 			System.exit(0);
 		}
+	}
+
+	private void reiniciar()
+	{
+		// Reset contador
+		contador = 0;
+		// Reset del turno
+		turno = 0;
+		// Reset fin 
+		fin = false;
+		// botones: quitar las etiquetas
+		btn1.setLabel("");
+		btn2.setLabel("");
+		btn3.setLabel("");
+		btn4.setLabel("");
+		btn5.setLabel("");
+		btn6.setLabel("");
+		btn7.setLabel("");
+		btn8.setLabel("");
+		btn9.setLabel("");
+		// botones: añadir otra vez los listener
+		btn1.removeActionListener(this);
+		btn2.removeActionListener(this);
+		btn3.removeActionListener(this);
+		btn4.removeActionListener(this);
+		btn5.removeActionListener(this);
+		btn6.removeActionListener(this);
+		btn7.removeActionListener(this);
+		btn8.removeActionListener(this);
+		btn9.removeActionListener(this);
+		
+		btn1.addActionListener(this);
+		btn2.addActionListener(this);
+		btn3.addActionListener(this);
+		btn4.addActionListener(this);
+		btn5.addActionListener(this);
+		btn6.addActionListener(this);
+		btn7.addActionListener(this);
+		btn8.addActionListener(this);
+		btn9.addActionListener(this);
 	}
 
 	@Override
@@ -269,74 +310,72 @@ public class Ejercicio10 implements WindowListener, ActionListener
 			btn9.removeActionListener(this);
 		}
 
-		// ¿Cómo hace la variable contador para aumentar?
 		contador ++;
 		comprobar();
-		if(contador == 9)
-		{
-			lblMensaje.setText("Empate");
-			digMensaje.add(lblMensaje);
-			digMensaje.setVisible(true);
-		}
+		
 	}
 
 	private void comprobar()
 	{
 		if((btn1.getLabel() == btn2.getLabel()) && (btn2.getLabel() == btn3.getLabel()) && 
-			(!btn1.getLabel().equals("")))
+			(btn1.getLabel() != ""))
 		{
 			lblMensaje.setText("Ha ganado " + btn1.getLabel());
 			// ¿Que papel hace la variable fin?
 			fin = true;
-			digMensaje.setVisible(true);
 		}
 		else if((btn4.getLabel() == btn5.getLabel()) && (btn5.getLabel() == btn6.getLabel()) && 
-				(!btn4.getLabel().equals("")))
+				(btn4.getLabel() != ""))
 		{
 			lblMensaje.setText("Ha ganado " + btn4.getLabel());
 			fin = true;
-			digMensaje.setVisible(true);
 		}
 		else if((btn7.getLabel() == btn8.getLabel()) && (btn8.getLabel() == btn9.getLabel()) &&
-				(!btn7.getLabel().equals("")))
+				(btn7.getLabel() != ""))
 		{
 			lblMensaje.setText("Ha ganado " + btn7.getLabel());
-			fin = true;
-			digMensaje.setVisible(true);
+			fin = true;	
 		}
 		else if((btn1.getLabel() == btn4.getLabel()) && (btn4.getLabel() == btn7.getLabel()) &&
-				(!btn1.getLabel().equals("")))
+				(btn1.getLabel() != ""))
 		{
 			lblMensaje.setText("Ha ganado " + btn1.getLabel());
 			fin = true;
-			digMensaje.setVisible(true);
 		}
 		else if((btn2.getLabel() == btn5.getLabel()) && (btn5.getLabel() == btn8.getLabel()) &&
-				(!btn2.getLabel().equals(""))) 
+				(btn2.getLabel() != "")) 
 		{
 			lblMensaje.setText("Ha ganado " + btn2.getLabel());
 			fin = true;
-			digMensaje.setVisible(true);
 		}
 		else if((btn3.getLabel() == btn6.getLabel()) && (btn6.getLabel() == btn9.getLabel()) &&
-				(!btn3.getLabel().equals("")))
+				(btn3.getLabel() != ""))
 		{
 			lblMensaje.setText("Ha ganado " + btn3.getLabel());
 			fin = true;
-			digMensaje.setVisible(true);
 		}
 		else if((btn1.getLabel() == btn5.getLabel()) && (btn5.getLabel() == btn9.getLabel()) &&
-				(!btn1.getLabel().equals("")))
+				(btn1.getLabel() != ""))
 		{
 			lblMensaje.setText("Ha ganado " + btn1.getLabel());
 			fin = true;
-			digMensaje.setVisible(true);
 		}
 		else if((btn3.getLabel() == btn5.getLabel()) && (btn5.getLabel() == btn7.getLabel()) &&
-				(!btn3.getLabel().equals("")))
+				(btn3.getLabel() != ""))
 		{
 			lblMensaje.setText("Ha ganado " + btn3.getLabel());
 			fin = true;
+		}
+		else if(contador == 9)
+		{
+			lblMensaje.setText("Empate");
+			digMensaje.add(lblMensaje);
+			digMensaje.setVisible(true);
+		}
+		
+		if(fin == true)
+		{
+			digMensaje.add(lblMensaje);
 			digMensaje.setVisible(true);
 		}
 	}
