@@ -267,10 +267,10 @@ public class Ejercicio11 implements WindowListener, ActionListener
 			btnPunto.removeActionListener(this);
 			btnPunto.addActionListener(this);
 		}
-	//	else if(evento.getSource().equals(btnCE))
-		//{
-			
-		//}
+		else if(evento.getSource().equals(btnBorrar))
+		{
+			txtPantalla.setText("");
+		}
 	}
 
 	@Override
